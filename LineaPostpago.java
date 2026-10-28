@@ -1,7 +1,3 @@
-/**
- * Hija de LineaTelefonica. El cliente paga al final del mes:
- * las llamadas se acumulan y se factura cargo fijo + consumo.
- */
 public class LineaPostpago extends LineaTelefonica {
 
     private double limiteCredito;
@@ -34,7 +30,7 @@ public class LineaPostpago extends LineaTelefonica {
         this.cargoFijoMensual = cargoFijoMensual;
     }
 
-    /** RF-09: simula una llamada respetando el límite de crédito. */
+    // simula una llamada respetando el límite de crédito. 
     public boolean simularLlamada(double minutos) {
         if (minutos <= 0) {
             System.out.println("Error: la duración debe ser mayor que cero.");
@@ -54,7 +50,7 @@ public class LineaPostpago extends LineaTelefonica {
         return true;
     }
 
-    /** RF-10: factura = cargo fijo + consumo. */
+    // factura = cargo fijo + consumo. */
     public double calcularFactura() {
         return cargoFijoMensual + calcularCostoConsumo();
     }
