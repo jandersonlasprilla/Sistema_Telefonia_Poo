@@ -1,15 +1,10 @@
 import java.util.Locale;
-
-/**
- * Clase padre. Representa una línea telefónica genérica.
- * Aplica ENCAPSULAMIENTO: atributos privados + get/set con validaciones.
- */
 public class LineaTelefonica {
 
-    // Requerimiento RD-01: tarifa fija del minuto en Colombia
+    //  tarifa fija del minuto en Colombia
     public static final double TARIFA_MINUTO = 150;
 
-    // Atributos PRIVADOS (RNF-01)
+    // Atributos PRIVADOS 
     private String numero;
     private String propietario;
     private double minutosConsumidos;
@@ -24,13 +19,13 @@ public class LineaTelefonica {
         setSaldo(saldo);
     }
 
-    // ---------- GET ----------
+    // Metodo GET 
     public String getNumero() { return numero; }
     public String getPropietario() { return propietario; }
     public double getMinutosConsumidos() { return minutosConsumidos; }
     public double getSaldo() { return saldo; }
 
-    // ---------- SET (con validaciones) ----------
+    // Metodo  SET (con validaciones) 
     public void setNumero(String numero) {
         if (numero == null || numero.trim().isEmpty()) {
             System.out.println("Error: el número no puede estar vacío.");
@@ -63,8 +58,8 @@ public class LineaTelefonica {
         this.saldo = saldo;
     }
 
-    // ---------- Lógica de negocio ----------
-    /** Costo del consumo mensual = minutosConsumidos * $150 (RF-06). */
+    // Lógica de negocio 
+   // Costo del consumo mensual = minutosConsumidos 
     public double calcularCostoConsumo() {
         return minutosConsumidos * TARIFA_MINUTO;
     }
@@ -77,7 +72,7 @@ public class LineaTelefonica {
         System.out.println("Costo del consumo: " + formatoPesos(calcularCostoConsumo()));
     }
 
-    /** Da formato de pesos colombianos: 1500 -> $1.500 */
+    // Da formato de pesos colombianos: 1500 -> $1.500 
     public static String formatoPesos(double valor) {
         return String.format(Locale.forLanguageTag("es-CO"), "$%,.0f", valor);
     }
