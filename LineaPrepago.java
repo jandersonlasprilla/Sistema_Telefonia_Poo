@@ -1,7 +1,3 @@
-/**
- * Hija de LineaTelefonica. El cliente paga por adelantado:
- * las llamadas se descuentan del saldo.
- */
 public class LineaPrepago extends LineaTelefonica {
 
     // Atributo propio: acumulado de todo lo recargado
@@ -15,7 +11,7 @@ public class LineaPrepago extends LineaTelefonica {
 
     public double getTotalRecargado() { return totalRecargado; }
 
-    /** RF-07: recarga saldo. Debe ser mayor que cero. */
+    // recarga saldo. Debe ser mayor que cero.
     public boolean recargar(double valor) {
         if (valor <= 0) {
             System.out.println("Error: la recarga debe ser mayor que cero.");
@@ -28,7 +24,7 @@ public class LineaPrepago extends LineaTelefonica {
         return true;
     }
 
-    /** RF-08: simula una llamada y descuenta su costo del saldo. */
+    // simula una llamada y descuenta su costo del saldo. 
     public boolean simularLlamada(double minutos) {
         if (minutos <= 0) {
             System.out.println("Error: la duración debe ser mayor que cero.");
