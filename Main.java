@@ -18,12 +18,12 @@ public class Main {
         System.out.println("===== 1. REGISTRO DE LÍNEAS =====");
         String numPre = "3001234567";
         if (!existeNumero(numPre)) {
-            LineaPrepago prepago = new LineaPrepago(numPre, "Ana Gómez", 0, 5000);
+            LineaPrepago prepago = new LineaPrepago(numPre, "Matias Lasprilla", 0, 5000);
             lineas.add(prepago);
         }
         String numPos = "3109876543";
         if (!existeNumero(numPos)) {
-            LineaPostpago postpago = new LineaPostpago(numPos, "Carlos Ruiz", 0, 0, 100000, 30000);
+            LineaPostpago postpago = new LineaPostpago(numPos, "Jhostin Aponza", 0, 0, 100000, 30000);
             lineas.add(postpago);
         }
 
